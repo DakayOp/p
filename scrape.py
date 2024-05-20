@@ -3,7 +3,7 @@ import requests
 
 # Fungsi untuk menghapus file proxy.txt
 def remove_proxy_file():
-    proxy_file = "/root/methods/proxy.txt"
+    proxy_file = "/workspace/p/proxy.txt"
     if os.path.exists(proxy_file):
         os.remove(proxy_file)
         print("File proxy.txt berhasil dihapus")
@@ -37,7 +37,7 @@ remove_proxy_file()
 # Mengambil daftar proxy dari setiap API URL dan menyimpannya ke file proxy.txt
 for api_url in api_urls:
     proxy_list = get_proxy_list(api_url)
-    with open("/root/methods/proxy.txt", "a") as file:
+    with open("/workspace/p/proxy.txt", "a") as file:
         for proxy in proxy_list:
             file.write(proxy + "\n")
 
